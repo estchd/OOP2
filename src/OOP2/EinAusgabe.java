@@ -16,17 +16,17 @@ public class EinAusgabe {
         throw new NotImplementedException();
     }
 
-    public int intAbfrage(String frage)
+    public static int intAbfrage(String frage)
     {
         throw new NotImplementedException();
     }
 
-    public Vector2 positionsAbfrage(String frage)
+    public static Vector2 positionsAbfrage(String frage)
     {
         throw new NotImplementedException();
     }
 
-    public int auswahlAbfrage(String frage, List<String> möglichkeiten)
+    public static int auswahlAbfrage(String frage, List<String> möglichkeiten)
     {
         throw new NotImplementedException();
     }
