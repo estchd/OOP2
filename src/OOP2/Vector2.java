@@ -41,4 +41,10 @@ public class Vector2
     {
         throw new NotImplementedException();
     }
+
+    @Override
+    public boolean equals(Object other)
+    {
+        throw new NotImplementedException();
+    }
 }

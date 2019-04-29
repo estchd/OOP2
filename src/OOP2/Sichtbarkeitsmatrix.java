@@ -23,7 +23,7 @@ public class Sichtbarkeitsmatrix {
         throw new NotImplementedException();
     }
 
-    public void SetAnzSichtbareBäume()
+    public void SetAnzSichtbareBäume(int anz)
     {
         throw new NotImplementedException();
     }
