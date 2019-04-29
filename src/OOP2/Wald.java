@@ -96,7 +96,7 @@ public class Wald {
     {
         throw new NotImplementedException();
 
-        //erstelle DICT <positionsvektor, Sichtbarkeitsmatrix>
+        //erstelle DICT/Map <positionsvektor, Sichtbarkeitsmatrix>
         //setzte int maxBäume auf 0
         //
         //für alle waldpositionen
