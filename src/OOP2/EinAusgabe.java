@@ -4,6 +4,9 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 
+/**
+ * Josis
+ */
 public class EinAusgabe {
 
     public static String textEingabe()

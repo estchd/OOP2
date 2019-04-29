@@ -2,6 +2,9 @@ package OOP2;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+/**
+ * Josis
+ */
 public class Waldposition {
     private Vector2 position;
     private FeldTyp typ;
