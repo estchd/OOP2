@@ -3,7 +3,7 @@ package OOP2;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
- * Josis
+ * @author Josi
  */
 public class Waldposition {
     private Vector2 position;
@@ -15,27 +15,28 @@ public class Waldposition {
     }
 
     public Waldposition(Vector2 position, FeldTyp typ){
-
+        this.position = position;
+        this.typ = typ;
     }
 
     public void setPosition(Vector2 vector2)
     {
-        throw new NotImplementedException();
+        position = vector2;
     }
 
     public Vector2 getPosition()
     {
-        throw new NotImplementedException();
+        return position;
     }
 
-    public void setTyp(FeldTyp typ)
+    public void setTyp(FeldTyp ftyp)
     {
-        throw new NotImplementedException();
+        this.typ = ftyp;
     }
 
     public FeldTyp getTyp()
     {
-        throw new NotImplementedException();
+        return typ;
     }
 
 }
