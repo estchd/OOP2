@@ -3,6 +3,7 @@ package OOP2;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * @author Josi
@@ -18,7 +19,7 @@ public class EinAusgabe {
      */
     public static String textEingabe()
     {
-        return Scanner.nextLine();
+        return scanner.nextLine();
     }
 
     /**
@@ -43,7 +44,7 @@ public class EinAusgabe {
     {
         textAusgabe(frage);
         String eingabe = textEingabe().trim().toLowerCase().replaceAll("[\\D]", "");
-        int zahl;
+        int zahl = 0;
         boolean weiterfragen = true;
         while (weiterfragen) {
             try {
@@ -68,7 +69,7 @@ public class EinAusgabe {
      * @param frage : Konsolenausgabe
      * @return vector : Position als Vector2
      */
-    public static Vector2 positionsAbfrage(String frage, Wald wald)
+    public static Vector2 positionsAbfrage(String frage)
     {
         //TODO Bitte auf Spielfeldgröße achten!
         textAusgabe(frage);
@@ -99,7 +100,7 @@ public class EinAusgabe {
             textAusgabe(i + ": " + s);
             i++;
         }
-        int auswahl = intAbfrage("Bitte die gewählte Nummer eingeben!")
+        int auswahl = intAbfrage("Bitte die gewählte Nummer eingeben!");
         return auswahl;
     }
 

@@ -104,6 +104,11 @@ public class Vector2
         return (int)this.x+(int)this.y;
     }
 
+    @Override
+    public String toString(){
+        return "(" + this.x + "|" + this.y + ")";
+    }
+
     /**
      * @author Erik
      * @param other

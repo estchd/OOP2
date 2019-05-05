@@ -2,6 +2,7 @@ package OOP2;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,15 @@ public class Wald {
     {
         this.höhe = höhe;
         this.breite = breite;
+
+        positionen = new ArrayList<>();
+
+        for(int y = 0; y < höhe; y++){
+            positionen.add(new ArrayList<>());
+            for(int x = 0; x < breite; x++){
+                positionen.get(y).add(new Waldposition(new Vector2(x,y),FeldTyp.Baum));
+            }
+        }
     }
 
     /**
@@ -40,6 +50,9 @@ public class Wald {
             throw new IllegalArgumentException("Position zu groß!");
         }
 
+        FeldTyp typVorher = positionen.get((int)listPosition.GetY()).get((int)listPosition.GetX()).getTyp();
+        positionen.get((int)listPosition.GetY()).set((int)listPosition.GetX(),new Waldposition(listPosition, FeldTyp.Förster));
+
         Map<Vector2, Vector2> sichtbareBäume = new HashMap<Vector2,Vector2>();
 
         for(int y = 0; y < höhe; y++){
@@ -47,7 +60,7 @@ public class Wald {
 
                 Vector2 pos = new Vector2(x,y);
 
-                if(pos.equals(listPosition))
+                if(positionen.get(y).get(x).getTyp() == FeldTyp.Förster || positionen.get(y).get(x).getTyp() == FeldTyp.None)
                 {
                     continue;
                 }
@@ -65,29 +78,40 @@ public class Wald {
                 else{
                     sichtbareBäume.put(richtungBaum, försterZuBaum);
                 }
-
             }
         }
 
         Sichtbarkeitsmatrix result = new Sichtbarkeitsmatrix(breite, höhe);
-        List<List<SichtbarkeitsTyp>> matrix = result.GetMatrix();
-        matrix.get((int)listPosition.GetY()).set((int)listPosition.GetX(), SichtbarkeitsTyp.Förster);
+        List<List<SichtbarkeitsTyp>> matrix = result.getMatrix();
 
-        for (Vector2 försterZuBaum : sichtbareBäume.values()) {
-            Vector2 baumPos = listPosition.AddVector2(försterZuBaum);
+        for(int y = 0; y < höhe; y++){
+            for(int x = 0; x < breite; x++){
+                FeldTyp typ = positionen.get(y).get(x).getTyp();
+                switch(typ){
+                    case None:
+                        matrix.get(y).set(x,SichtbarkeitsTyp.None);
+                        break;
 
-            matrix.get((int) baumPos.GetY()).set((int)baumPos.GetX(), SichtbarkeitsTyp.SichtbarerBaum);
-        }
+                    case Förster:
+                        matrix.get(y).set(x,SichtbarkeitsTyp.Förster);
+                        break;
 
-        for(int y = 0; y < matrix.size(); y++){
-            for(int x = 0; x < matrix.get(0).size(); x++){
-                if(matrix.get(y).get(x) == SichtbarkeitsTyp.None){
-                    matrix.get(y).set(x,SichtbarkeitsTyp.UnsichtbarerBaum);
+                    case Baum:
+                        matrix.get(y).set(x,SichtbarkeitsTyp.UnsichtbarerBaum);
+                        break;
                 }
             }
         }
 
-        result.SetMatrix(matrix);
+        for (Vector2 vec : sichtbareBäume.values()) {
+            Vector2 baumPos = vec.AddVector2(listPosition);
+
+            matrix.get((int)baumPos.GetY()).set((int)baumPos.GetX(),SichtbarkeitsTyp.SichtbarerBaum);
+        }
+
+        result.setMatrix(matrix);
+
+        positionen.get((int)listPosition.GetY()).set((int)listPosition.GetX(),new Waldposition(listPosition, typVorher));
 
         return result;
     }
@@ -99,12 +123,12 @@ public class Wald {
      * sowie die Positionen an denen der Förster dafür stehen muss, und gibt diese auf der Konsole aus.
      * @return positionslist : Liste an Positionen des Förster, wo dieser die maximale Anzahl an Bäumen sieht
      */
-    public List<Vector2> berechneMaximaleSichtbarbeiten()
+    public List<Vector2> berechneMaximaleSichtbarkeiten()
     {
         HashMap<Vector2, Sichtbarkeitsmatrix> waldmap = new HashMap<Vector2, Sichtbarkeitsmatrix>();
         int maxBaume = 0;
-        for (int x = 0, x<= breite, x++) {
-            for (int y=0, y<= höhe, y++) {
+        for (int x = 0; x< breite; x++) {
+            for (int y=0; y< höhe; y++) {
                 Vector2 position = new Vector2(x,y);
                 Sichtbarkeitsmatrix matrix = berechneSichtbarkeit(position);
                 if (matrix.getAnzSichtbareBäume() > maxBaume) {
@@ -119,11 +143,11 @@ public class Wald {
         System.out.println("Die maximale Anzahl sichtbarer Bäume beträägt: " + maxBaume );
         System.out.println("und diese sieht der Förster an folgenden Positionen: ");
         for (Map.Entry<Vector2, Sichtbarkeitsmatrix> entry : waldmap.entrySet()) {
-            System.out.println("Position: " + entry.getKey);
-            System.out.println(entry.getValue);
+            System.out.println("Position: " + entry.getKey());
+            System.out.println(entry.getValue());
         }
         ArrayList<Vector2> positionslist = new ArrayList<Vector2>();
-        positionslist.addAll(waldmap.keySet())
+        positionslist.addAll(waldmap.keySet());
         return positionslist;
 
         //erstelle DICT/Map <positionsvektor, Sichtbarkeitsmatrix>
