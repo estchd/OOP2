@@ -36,7 +36,7 @@ public class Sichtbarkeitsmatrix {
      * @author Erik
      * @return
      */
-    public int GetAnzSichtbareBäume()
+    public int getAnzSichtbareBäume()
     {
         return anzSichtbareBäume;
     }
@@ -45,7 +45,7 @@ public class Sichtbarkeitsmatrix {
      * @author Erik
      * @return
      */
-    public List<List<SichtbarkeitsTyp>> GetMatrix()
+    public List<List<SichtbarkeitsTyp>> getMatrix()
     {
         return matrix;
     }
@@ -54,7 +54,7 @@ public class Sichtbarkeitsmatrix {
      * @author Erik
      * @param matrix
      */
-    public void SetMatrix(List<List<SichtbarkeitsTyp>> matrix)
+    public void setMatrix(List<List<SichtbarkeitsTyp>> matrix)
     {
         anzSichtbareBäume = 0;
 

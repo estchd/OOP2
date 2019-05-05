@@ -92,9 +92,37 @@ public class Wald {
         return result;
     }
 
+    /**
+     * @author Josi
+     *
+     * @return
+     */
     public List<Vector2> berechneMaximaleSichtbarbeiten()
     {
-        throw new NotImplementedException();
+        HashMap<Vector2, Sichtbarkeitsmatrix> waldmap = new HashMap<Vector2, Sichtbarkeitsmatrix>();
+        int maxBaume = 0;
+        for (int x = 0, x<= breite, x++) {
+            for (int y=0, y<= höhe, y++) {
+                Vector2 position = new Vector2(x,y);
+                Sichtbarkeitsmatrix matrix = berechneSichtbarkeit(position);
+                if (matrix.getAnzSichtbareBäume() > maxBaume) {
+                    waldmap = new HashMap<Vector2, Sichtbarkeitsmatrix>();
+                    waldmap.put(position, matrix);
+                    maxBaume = matrix.getAnzSichtbareBäume();
+                } else if (matrix.getAnzSichtbareBäume() == maxBaume) {
+                    waldmap.put(position, matrix);
+                }
+            }
+        }
+        System.out.println("Die maximale Anzahl sichtbarer Bäume beträägt: " + maxBaume );
+        System.out.println("und diese sieht der Förster an folgenden Positionen: ");
+        for (Map.Entry<Vector2, Sichtbarkeitsmatrix> entry : waldmap.entrySet()) {
+            System.out.println("Position: " + entry.getKey);
+            System.out.println(entry.getValue);
+        }
+        ArrayList<Vector2> positionslist = new ArrayList<Vector2>();
+        positionslist.addAll(waldmap.keySet())
+        return positionslist;
 
         //erstelle DICT/Map <positionsvektor, Sichtbarkeitsmatrix>
         //setzte int maxBäume auf 0
