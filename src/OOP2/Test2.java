@@ -2,6 +2,8 @@ package OOP2;
 
 public class Test2 {
     /**
+     * @author Josi
+     *
      * Führt die Zweite Testserie durch
      * @param args Programmargumente
      */

@@ -95,7 +95,9 @@ public class Wald {
     /**
      * @author Josi
      *
-     * @return
+     * Die Funktion berechnet die maximale Anzahl an Bäumen die sichtbar sind,
+     * sowie die Positionen an denen der Förster dafür stehen muss, und gibt diese auf der Konsole aus.
+     * @return positionslist : Liste an Positionen des Förster, wo dieser die maximale Anzahl an Bäumen sieht
      */
     public List<Vector2> berechneMaximaleSichtbarbeiten()
     {
