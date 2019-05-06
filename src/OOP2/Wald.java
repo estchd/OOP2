@@ -149,8 +149,8 @@ public class Wald {
                 }
             }
         }
-        System.out.println("Die maximale Anzahl sichtbarer Bäume beträägt: " + maxBaume );
-        System.out.println("und diese sieht der Förster an folgenden Positionen: ");
+        System.out.println("Die maximale Anzahl sichtbarer Bäume beträgt: " + maxBaume );
+        System.out.println("und diese sieht der Förster an " + waldmap.size() + " Positionen: ");
         for (Map.Entry<Vector2, Sichtbarkeitsmatrix> entry : waldmap.entrySet()) {
             System.out.println("Position: " + entry.getKey());
             System.out.println(entry.getValue());
