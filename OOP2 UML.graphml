@@ -116,12 +116,13 @@
     <node id="n5">
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="88.5930703259005" width="140.0" x="299.2943602058319" y="595.1405420240139"/>
+          <y:Geometry height="101.4891252144082" width="140.0" x="299.2943602058319" y="588.6925145797601"/>
           <y:Fill color="#C0C0C0" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="53.83544921875" x="43.082275390625" xml:space="preserve" y="26.701171875">FeldTyp<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="enumeration" use3DEffect="true">
-            <y:AttributeLabel xml:space="preserve">Förster
+            <y:AttributeLabel xml:space="preserve">None
+Förster
 Baum</y:AttributeLabel>
             <y:MethodLabel xml:space="preserve"/>
           </y:UML>
@@ -147,12 +148,13 @@ Baum</y:AttributeLabel>
     <node id="n7">
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="101.4891252144082" width="167.0" x="-159.28607574943368" y="355.6519725557463"/>
+          <y:Geometry height="114.294061368401" width="167.0" x="-159.28607574943368" y="349.2495044787499"/>
           <y:Fill color="#C0C0C0" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="108.75537109375" x="29.122314453125" xml:space="preserve" y="26.701171875">SichtbarkeitsTyp<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="enumeratio" use3DEffect="true">
-            <y:AttributeLabel xml:space="preserve">Förster
+            <y:AttributeLabel xml:space="preserve">None
+Förster
 BaumSichtbar
 BaumUnsichtbar</y:AttributeLabel>
             <y:MethodLabel xml:space="preserve"/>
@@ -173,10 +175,10 @@ BaumUnsichtbar</y:AttributeLabel>
 </y:AttributeLabel>
             <y:MethodLabel xml:space="preserve">+ SichtbarkeitsMatrix()
 
-+ GetAnzSichtbareBäume() : int
-+ GetMatrix() : List&lt;List&lt;SichtbarkeitsTyp&gt;&gt;
-+ SetAnzSichtbareBäume(anz : int) : void
-+ SetMatrix(matrix : List&lt;List&lt;SichtbarkeitsTyp&gt;&gt;) : void
++ getAnzSichtbareBäume() : int
++ getMatrix() : List&lt;List&lt;SichtbarkeitsTyp&gt;&gt;
++ setAnzSichtbareBäume(anz : int) : void
++ setMatrix(matrix : List&lt;List&lt;SichtbarkeitsTyp&gt;&gt;) : void
 + toString() : String</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>

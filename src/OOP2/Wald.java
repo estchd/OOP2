@@ -14,8 +14,8 @@ public class Wald {
 
     /**
      * @author Erik
-     * @param höhe
-     * @param breite
+     * @param höhe Die Höhe des Waldes
+     * @param breite Die Breite des Waldes
      */
     public Wald(int höhe, int breite)
     {
@@ -34,12 +34,15 @@ public class Wald {
 
     /**
      * @author Erik
-     * @param position
-     * @return
+     * Berechnet die Sichtbarkeitsmatrix für die Position eines Försters
+     * @param position Die Position des Försters
+     * @return Die Sichtbarkeitsmatrix für die Position des Försters
      */
     public Sichtbarkeitsmatrix berechneSichtbarkeit(Vector2 position)
     {
         Vector2 listPosition = new Vector2((int)position.GetX(),(int)position.GetY());
+
+        //Tests für ungültige Positionen
 
         if(listPosition.GetX() < 0 || listPosition.GetY() < 0)
         {
@@ -50,8 +53,12 @@ public class Wald {
             throw new IllegalArgumentException("Position zu groß!");
         }
 
+        //Setzten der Försterposition
+
         FeldTyp typVorher = positionen.get((int)listPosition.GetY()).get((int)listPosition.GetX()).getTyp();
         positionen.get((int)listPosition.GetY()).set((int)listPosition.GetX(),new Waldposition(listPosition, FeldTyp.Förster));
+
+        //Berechnung der Sichtbaren Bäume
 
         Map<Vector2, Vector2> sichtbareBäume = new HashMap<Vector2,Vector2>();
 
@@ -80,6 +87,8 @@ public class Wald {
                 }
             }
         }
+
+        //Erstellen der Sichtbarkeitsmatrix
 
         Sichtbarkeitsmatrix result = new Sichtbarkeitsmatrix(breite, höhe);
         List<List<SichtbarkeitsTyp>> matrix = result.getMatrix();
@@ -110,6 +119,8 @@ public class Wald {
         }
 
         result.setMatrix(matrix);
+
+        //Entfernen des Försters
 
         positionen.get((int)listPosition.GetY()).set((int)listPosition.GetX(),new Waldposition(listPosition, typVorher));
 

@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * @autor Erik
+ * Die Matrix aus Nichts/Unsichtbarer Baum/ Sichtbarer Baum/ Förster für einen bestimmten Standpunkt des Försters
  */
 public class Sichtbarkeitsmatrix {
     private List<List<SichtbarkeitsTyp>> matrix;
@@ -14,8 +15,8 @@ public class Sichtbarkeitsmatrix {
 
     /**
      * @author Erik
-     * @param breite
-     * @param höhe
+     * @param breite Die Breite der Matrix
+     * @param höhe Die Höhe der Matrix
      */
     public Sichtbarkeitsmatrix(int breite, int höhe)
     {
@@ -34,7 +35,7 @@ public class Sichtbarkeitsmatrix {
 
     /**
      * @author Erik
-     * @return
+     * @return Die Anzahl der Bäume, die der Förster sehen kann
      */
     public int getAnzSichtbareBäume()
     {
@@ -43,7 +44,7 @@ public class Sichtbarkeitsmatrix {
 
     /**
      * @author Erik
-     * @return
+     * @return Die Sichtbarkeitsmatrix
      */
     public List<List<SichtbarkeitsTyp>> getMatrix()
     {
@@ -52,7 +53,7 @@ public class Sichtbarkeitsmatrix {
 
     /**
      * @author Erik
-     * @param matrix
+     * @param matrix Die neue Sichtbarkeitsmatrix
      */
     public void setMatrix(List<List<SichtbarkeitsTyp>> matrix)
     {
@@ -73,7 +74,7 @@ public class Sichtbarkeitsmatrix {
 
     /**
      * @author Erik
-     * @return
+     * @return Das String Äquivalent der Sichtbarkeitsmatrix
      */
     @Override
     public String toString() {

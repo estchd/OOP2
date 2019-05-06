@@ -2,6 +2,7 @@ package OOP2;
 
 /**
  * @author Erik
+ * Repräsentiert einen Vektor in R x R
  */
 public class Vector2
 {
@@ -18,8 +19,8 @@ public class Vector2
 
     /**
      * @author Erik
-     * @param x
-     * @param y
+     * @param x Vector X Koordinate
+     * @param y Vector Y Koordinate
      */
     public Vector2(double x, double y)
     {
@@ -29,7 +30,8 @@ public class Vector2
 
     /**
      * @author Erik
-     * @return
+     * Gibt die X Koordinate des Vectors zurück
+     * @return Die X Koordinate des Vectors
      */
     public double GetX()
     {
@@ -38,7 +40,8 @@ public class Vector2
 
     /**
      * @author Erik
-     * @param x
+     * Setzt die X Koordinate des Vectors
+     * @param x Die neue X Koordinate des Vektors
      */
     public void SetX(double x)
     {
@@ -47,7 +50,8 @@ public class Vector2
 
     /**
      * @author Erik
-     * @return
+     * Gibt die Y Koordinate des Vectors zurück
+     * @return Die Y Koordinaate des Vectors
      */
     public double GetY()
     {
@@ -56,7 +60,8 @@ public class Vector2
 
     /**
      * @author Erik
-     * @param y
+     * Setzt die Y Koordinate des Vectors
+     * @param y Die neue Y Koordinate des Vectors
      */
     public void SetY(double y)
     {
@@ -65,7 +70,8 @@ public class Vector2
 
     /**
      * @author Erik
-     * @return
+     * Berechnet die Länge des Vectors
+     * @return Die Länge des Vectors
      */
     public double GetLength()
     {
@@ -74,7 +80,8 @@ public class Vector2
 
     /**
      * @author Erik
-     * @return
+     * Berechnet den Einheitsvector des Vectors (Vektor mit selber Richtung, aber Länge 1)
+     * @return Der Einheitsvector des Vector
      */
     public Vector2 GetNormalized()
     {
@@ -84,8 +91,9 @@ public class Vector2
 
     /**
      * @author Erik
-     * @param other
-     * @return
+     * Prüft ein Anderes Object auf Gleichheit mit dem Vektor
+     * @param other Das Object, welches verglichen werden soll
+     * @return Wahr, falls Vector und anderes Object gleich, sonst falsch
      */
     @Override
     public boolean equals(Object other)
@@ -99,11 +107,21 @@ public class Vector2
         return Double.compare(vec.x, this.x) == 0 && Double.compare(vec.y, this.y) == 0;
     }
 
+    /**
+     * @author Erik
+     * Generiert den Hash Code des Vectors
+     * @return Der HashCode des Vectors
+     */
     @Override
     public int hashCode() {
         return (int)this.x+(int)this.y;
     }
 
+    /**
+     * @author Erik
+     * Generiert das String äquivalent des Vectors
+     * @return Das String Äquivalent des Vectors
+     */
     @Override
     public String toString(){
         return "(" + this.x + "|" + this.y + ")";
@@ -111,8 +129,9 @@ public class Vector2
 
     /**
      * @author Erik
-     * @param other
-     * @return
+     * Subtrahiert einen Vector
+     * @param other Der Vector, welcher abgezogen werden soll
+     * @return Das Ergebnis der Subtraktion
      */
     public Vector2 SubVector2(Vector2 other)
     {
@@ -121,8 +140,9 @@ public class Vector2
 
     /**
      * @author Erik
-     * @param other
-     * @return
+     * Addiert einen Vector
+     * @param other Der Vector, welcher addiert werden soll
+     * @return Das Ergebnis der Addition
      */
     public Vector2 AddVector2(Vector2 other)
     {
