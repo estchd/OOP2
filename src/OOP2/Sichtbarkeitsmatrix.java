@@ -101,6 +101,10 @@ public class Sichtbarkeitsmatrix {
                     case UnsichtbarerBaum:
                         rowString.append("|");
                         break;
+
+                    default:
+                        rowString.append("");
+                        break;
                 }
             }
             rowString.append("\n");

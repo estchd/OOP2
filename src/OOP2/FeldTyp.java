@@ -1,7 +1,13 @@
 package OOP2;
 
+/**
+ * @author Erik
+ *
+ * Enum Feldtyp
+ */
 public enum FeldTyp {
-    None,
+    Baum,
     Förster,
-    Baum
+    None
+
 }

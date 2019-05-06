@@ -1,17 +1,13 @@
 package OOP2;
 
-/**
- * Josis
- */
+
 public class Test1 {
 
     /**
      * @author Erik
      * Führt die erste Testserie durch
-     * @param args Programmargumente
      */
-    public static void main(String[] args){
-
+    public static void test1(){
         int breite = EinAusgabe.intAbfrage("Wie breit ist der Wald?");
         int höhe = EinAusgabe.intAbfrage("Wie hoch ist der Wald?");
         Vector2 försterPosition = EinAusgabe.positionsAbfrage("Wo steht der Förster?");
