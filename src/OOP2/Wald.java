@@ -1,7 +1,5 @@
 package OOP2;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -40,23 +38,23 @@ public class Wald {
      */
     public Sichtbarkeitsmatrix berechneSichtbarkeit(Vector2 position)
     {
-        Vector2 listPosition = new Vector2((int)position.GetX(),(int)position.GetY());
+        Vector2 listPosition = new Vector2((int)position.getX(),(int)position.getY());
 
         //Tests für ungültige Positionen
 
-        if(listPosition.GetX() < 0 || listPosition.GetY() < 0)
+        if(listPosition.getX() < 0 || listPosition.getY() < 0)
         {
             throw new IllegalArgumentException("Position kann nicht negativ sein!");
         }
-        if(listPosition.GetX() >= breite ||listPosition.GetY() >= höhe)
+        if(listPosition.getX() >= breite ||listPosition.getY() >= höhe)
         {
             throw new IllegalArgumentException("Position zu groß!");
         }
 
         //Setzten der Försterposition
 
-        FeldTyp typVorher = positionen.get((int)listPosition.GetY()).get((int)listPosition.GetX()).getTyp();
-        positionen.get((int)listPosition.GetY()).set((int)listPosition.GetX(),new Waldposition(listPosition, FeldTyp.Förster));
+        FeldTyp typVorher = positionen.get((int)listPosition.getY()).get((int)listPosition.getX()).getTyp();
+        positionen.get((int)listPosition.getY()).set((int)listPosition.getX(),new Waldposition(listPosition, FeldTyp.Förster));
 
         //Berechnung der Sichtbaren Bäume
 
@@ -72,13 +70,13 @@ public class Wald {
                     continue;
                 }
 
-                Vector2 försterZuBaum = pos.SubVector2(listPosition);
-                Vector2 richtungBaum = försterZuBaum.GetNormalized();
+                Vector2 försterZuBaum = pos.subVector2(listPosition);
+                Vector2 richtungBaum = försterZuBaum.getNormalized();
 
                 if(sichtbareBäume.containsKey(richtungBaum)){
                     Vector2 gespeicherterBaum = sichtbareBäume.get(richtungBaum);
 
-                    if(gespeicherterBaum.GetLength() > försterZuBaum.GetLength()){
+                    if(gespeicherterBaum.getLength() > försterZuBaum.getLength()){
                         sichtbareBäume.replace(richtungBaum,försterZuBaum);
                     }
                 }
@@ -113,16 +111,16 @@ public class Wald {
         }
 
         for (Vector2 vec : sichtbareBäume.values()) {
-            Vector2 baumPos = vec.AddVector2(listPosition);
+            Vector2 baumPos = vec.addVector2(listPosition);
 
-            matrix.get((int)baumPos.GetY()).set((int)baumPos.GetX(),SichtbarkeitsTyp.SichtbarerBaum);
+            matrix.get((int)baumPos.getY()).set((int)baumPos.getX(),SichtbarkeitsTyp.SichtbarerBaum);
         }
 
         result.setMatrix(matrix);
 
         //Entfernen des Försters
 
-        positionen.get((int)listPosition.GetY()).set((int)listPosition.GetX(),new Waldposition(listPosition, typVorher));
+        positionen.get((int)listPosition.getY()).set((int)listPosition.getX(),new Waldposition(listPosition, typVorher));
 
         return result;
     }

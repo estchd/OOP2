@@ -33,7 +33,7 @@ public class Vector2
      * Gibt die X Koordinate des Vectors zurück
      * @return Die X Koordinate des Vectors
      */
-    public double GetX()
+    public double getX()
     {
         return this.x;
     }
@@ -43,7 +43,7 @@ public class Vector2
      * Setzt die X Koordinate des Vectors
      * @param x Die neue X Koordinate des Vektors
      */
-    public void SetX(double x)
+    public void setX(double x)
     {
         this.x = x;
     }
@@ -53,7 +53,7 @@ public class Vector2
      * Gibt die Y Koordinate des Vectors zurück
      * @return Die Y Koordinaate des Vectors
      */
-    public double GetY()
+    public double getY()
     {
         return this.y;
     }
@@ -63,7 +63,7 @@ public class Vector2
      * Setzt die Y Koordinate des Vectors
      * @param y Die neue Y Koordinate des Vectors
      */
-    public void SetY(double y)
+    public void setY(double y)
     {
         this.y = y;
     }
@@ -73,7 +73,7 @@ public class Vector2
      * Berechnet die Länge des Vectors
      * @return Die Länge des Vectors
      */
-    public double GetLength()
+    public double getLength()
     {
         return Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
     }
@@ -83,9 +83,9 @@ public class Vector2
      * Berechnet den Einheitsvector des Vectors (Vektor mit selber Richtung, aber Länge 1)
      * @return Der Einheitsvector des Vector
      */
-    public Vector2 GetNormalized()
+    public Vector2 getNormalized()
     {
-        double factor = 1/GetLength();
+        double factor = 1/ getLength();
         return new Vector2(this.x * factor, this.y * factor);
     }
 
@@ -133,7 +133,7 @@ public class Vector2
      * @param other Der Vector, welcher abgezogen werden soll
      * @return Das Ergebnis der Subtraktion
      */
-    public Vector2 SubVector2(Vector2 other)
+    public Vector2 subVector2(Vector2 other)
     {
         return new Vector2(this.x - other.x, this.y - other.y);
     }
@@ -144,7 +144,7 @@ public class Vector2
      * @param other Der Vector, welcher addiert werden soll
      * @return Das Ergebnis der Addition
      */
-    public Vector2 AddVector2(Vector2 other)
+    public Vector2 addVector2(Vector2 other)
     {
         return new Vector2(this.x + other.x, this.y + other.y);
     }

@@ -15,7 +15,7 @@ public class Test1 {
 
         Sichtbarkeitsmatrix matrix = wald.berechneSichtbarkeit(försterPosition);
 
-        System.out.println("Förster an Position ("+försterPosition.GetX()+","+försterPosition.GetY()+") sieht "+matrix.getAnzSichtbareBäume()+" Bäume!");
+        System.out.println("Förster an Position ("+försterPosition.getX()+","+försterPosition.getY()+") sieht "+matrix.getAnzSichtbareBäume()+" Bäume!");
         System.out.println("Sichtbarkeitsmatrix:");
         System.out.print(matrix.toString());
     }
