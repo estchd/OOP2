@@ -158,19 +158,5 @@ public class Wald {
         ArrayList<Vector2> positionslist = new ArrayList<Vector2>();
         positionslist.addAll(waldmap.keySet());
         return positionslist;
-
-        //erstelle DICT/Map <positionsvektor, Sichtbarkeitsmatrix>
-        //setzte int maxBäume auf 0
-        //
-        //für alle waldpositionen
-        //  berechne sichtbarkeit
-        //  wenn anzSichtbareBäume an position größer maxBäume
-        //      verwerfe inhalt von DICT
-        //      speichere sichtbarkeitsmatrix mit position in DICT
-        //      setzte maxbäume auf anzSichtbareBäume
-        //  sonst wenn anzSichtbareBäume gleich maxBäume
-        //      speichere sichtbarkeitsmatrix mit position in DICT
-        //
-        //Gib Liste der DICT keys aus (evt auch matrizen)
     }
 }
