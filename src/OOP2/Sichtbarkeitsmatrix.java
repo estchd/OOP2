@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @autor Erik
+ * @author Erik
  * Die Matrix aus Nichts/Unsichtbarer Baum/ Sichtbarer Baum/ Förster für einen bestimmten Standpunkt des Försters
  */
 public class Sichtbarkeitsmatrix {
